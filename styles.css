@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  background: linear-gradient(to top, #7bc6cc, #be93c5);
+
+  cursor: default;
+  letter-spacing: 0.2em;
+  font-size: 0.8em;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+}
+
+footer {
+  color: grey;
+  letter-spacing: normal;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  background: linear-gradient(#d0d0d0, #f0f0f0);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  font-size: 72px;
+}
+footer a {
+  color: #6d95ed;
+  text-decoration: none;
+}
+
+.game {
+  margin: 0 0 25px 0;
+  width: auto;
+  height: auto;
+}
+
+div {
+  height: 20px;
+  width: 20px;
+}
+
+.grid div {
+  background-color: #2a2a2a;
+}
+
+.grid {
+  height: 300px;
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.next-grid {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.next-shape {
+  height: 80px;
+  width: 80px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.controlPanel {
+  background: #f0f0f0;
+  background-image: linear-gradient(#d0d0d0, #f0f0f0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: black;
+  width: auto;
+  border-radius: 25px;
+}
+
+.stats {
+  margin: 0 35px 0 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 100%;
+}
+button {
+  margin: 5px 10px;
+  border: 1px solid black;
+  background: transparent;
+  border-radius: 35px;
+}
+
+button:hover {
+  background-color: white;
+}
+.buttons {
+  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 100%;
+}
+.block {
+}
+
+.block2 {
+}
+
+.block3 {
+  background-image: url(images/green_block.png);
+}

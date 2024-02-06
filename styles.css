@@ -98,12 +98,14 @@ div {
   align-items: center;
   width: auto;
   height: 100%;
+  padding-top: 10px;
 }
 button {
   margin: 5px 10px;
   border: 1px solid black;
   background: transparent;
   border-radius: 35px;
+  padding: 0 10px;
 }
 
 button:hover {

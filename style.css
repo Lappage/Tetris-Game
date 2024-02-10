@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(to top, #7bc6cc, #be93c5);
+
+  cursor: default;
+  letter-spacing: 0.2em;
+  font-size: 0.8em;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header img {
+  width: 100%;
+  max-width: 350px;
+}
+.col-6,
+.col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  color: grey;
+  letter-spacing: normal;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  margin-top: auto;
+}
+
+.grid {
+  height: 390px;
+  width: 260px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid div,
+.next-grid div {
+  height: 26px;
+  width: 26px;
+  background-color: black;
+}
+
+.block3 {
+  background-image: url(images/green_block.png);
+}
+
+.controlPanel {
+  background: #f0f0f0;
+  background-image: linear-gradient(#d0d0d0, #f0f0f0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  color: black;
+  width: auto;
+  border-radius: 25px;
+}
+.stats {
+  margin: 0 35px 0 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  padding-top: 10px;
+}
+button {
+  margin: 5px 10px;
+  border: 1px solid black;
+  background: transparent;
+  border-radius: 35px;
+  padding: 0 10px;
+}
+
+button:hover {
+  background-color: white;
+}
+.buttons {
+  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 100%;
+}
+
+.next-grid {
+  height: 104px;
+  width: 104px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+  /* position: relative;
+  left: 5px; */
+}
+
+.next-shape {
+  height: 300px;
+  width: auto;
+}

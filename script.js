@@ -7,16 +7,24 @@ const grid = document.querySelector(".grid");
 const displaySquares = document.querySelectorAll(".next-grid div");
 let squares = Array.from(grid.querySelectorAll("div"));
 const width = 10;
-const height = 20;
+const height = 26;
 const gridSize = width * height;
 let currentPosition = 4;
 let rotationArrayIndex = 0;
 let nextRandom = 0;
+let nextRandomColour = 0;
 let timerId;
 let score = 0;
 let lines = 0;
 let gameEnded = false;
-const colors = ["url(images/blue_block.png)", "url(images/pink_block.png)", "url(images/purple_block.png)", "url(images/peach_block.png)", "url(images/yellow_block.png)"];
+const colors = [
+  "url(images/cyan_block.png)",
+  "url(images/yellow_block.png)",
+  "url(images/blue_block.png)",
+  "url(images/orange_block.png)",
+  "url(images/red_block.png)",
+  "url(images/purple_block.png)",
+];
 
 // Listen for Keypresses
 function control(e) {
@@ -80,8 +88,8 @@ const iShape = [
 const shapes = [lShape, zShape, tShape, oShape, iShape];
 
 // Randomly select a shape
-// let random = Math.floor(Math.random() * shapes.length);
-let random = 4;
+let random = Math.floor(Math.random() * shapes.length);
+let randomColour = Math.floor(Math.random() * colors.length);
 let currentRotation = 0;
 let rotationArray = shapes[random][currentRotation];
 
@@ -90,7 +98,7 @@ let rotationArray = shapes[random][currentRotation];
 function draw() {
   rotationArray.forEach((index) => {
     squares[currentPosition + index].classList.add("block");
-    squares[currentPosition + index].style.backgroundImage = colors[random];
+    squares[currentPosition + index].style.backgroundImage = colors[randomColour];
   });
 }
 
@@ -108,7 +116,6 @@ function moveDown() {
   currentPosition += width;
   draw();
   freeze();
-  console.log(currentRotation, currentPosition);
 }
 
 // Move right and prevent collisions with shapes moving right
@@ -203,10 +210,6 @@ function rotate() {
     }
   }
 
-  if (isAtAnotherBlock) {
-    console.log("lol");
-    return;
-  }
   undraw();
   currentRotation++;
   if (currentRotation === rotationArray.length) {
@@ -237,7 +240,7 @@ function displayShape() {
   });
   smallShapes[nextRandom].forEach((index) => {
     displaySquares[displayIndex + index].classList.add("block");
-    displaySquares[displayIndex + index].style.backgroundImage = colors[nextRandom];
+    displaySquares[displayIndex + index].style.backgroundImage = colors[nextRandomColour];
   });
 }
 
@@ -253,7 +256,9 @@ function freeze() {
     });
 
     random = nextRandom;
+    randomColour = nextRandomColour;
     nextRandom = Math.floor(Math.random() * shapes.length);
+    nextRandomColour = Math.floor(Math.random() * colors.length);
     rotationArray = shapes[random][currentRotation];
     currentPosition = 4;
     draw();
@@ -270,7 +275,6 @@ function gameOver() {
       return squares[currentPosition + index].classList.contains("block2");
     })
   ) {
-    title.textContent = "Game Over";
     gameEnded = true;
     clearInterval(timerId);
   }

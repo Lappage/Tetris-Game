@@ -1,13 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 body {
   background: linear-gradient(to top, #7bc6cc, #be93c5);
-
   cursor: default;
   letter-spacing: 0.2em;
   font-size: 0.8em;
@@ -15,6 +17,7 @@ body {
 }
 
 header {
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,11 +26,24 @@ header img {
   width: 100%;
   max-width: 350px;
 }
-.col-6,
-.col {
+.left {
+  align-items: flex-end;
+}
+.right {
+  align-items: flex-start;
+}
+
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.col-6 {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   min-height: 100vh;
 }
@@ -36,6 +52,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 500px;
+  margin: auto auto;
 }
 
 footer {
@@ -44,20 +62,23 @@ footer {
   font-size: 1em;
   margin: 0;
   padding: 0;
-  margin-top: auto;
+  /* margin-top: auto; */
 }
 
 .grid {
-  height: 390px;
+  height: 442px;
   width: 260px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.grid div {
+  background-color: black;
 }
 .grid div,
 .next-grid div {
   height: 26px;
   width: 26px;
-  background-color: black;
 }
 
 .block3 {
@@ -114,8 +135,8 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   margin: 5px;
-  /* position: relative;
-  left: 5px; */
+  position: relative;
+  left: 15px;
 }
 
 .next-shape {

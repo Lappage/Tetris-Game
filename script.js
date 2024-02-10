@@ -5,6 +5,7 @@ const scoreDisplay = document.querySelector(".score-display");
 const linesDisplay = document.querySelector(".lines-display");
 const grid = document.querySelector(".grid");
 const displaySquares = document.querySelectorAll(".next-grid div");
+const nextShape = document.querySelector(".next-grid");
 let squares = Array.from(grid.querySelectorAll("div"));
 const width = 10;
 const height = 26;
@@ -238,6 +239,17 @@ function displayShape() {
     square.classList.remove("block");
     square.style.backgroundImage = "none";
   });
+  console.log(nextRandom, random);
+  if (nextRandom === 0) {
+    nextShape.style.left = "5px";
+  } else if (nextRandom === 1) {
+    nextShape.style.left = "30px";
+  } else if (nextRandom === 2 || nextRandom === 4) {
+    nextShape.style.left = "15px";
+  } else if (nextRandom === 3) {
+    nextShape.style.left = "27px";
+  }
+
   smallShapes[nextRandom].forEach((index) => {
     displaySquares[displayIndex + index].classList.add("block");
     displaySquares[displayIndex + index].style.backgroundImage = colors[nextRandomColour];

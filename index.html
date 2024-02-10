@@ -16,7 +16,18 @@
   <body>
     <div class="container content">
       <div class="row">
-        <div class="col">Column 1</div>
+        <div class="left col">
+          <div class="controlPanel">
+            <div class="buttons">
+              <button id="start">Start</button>
+              <button id="reset">Reset</button>
+            </div>
+            <div class="stats">
+              <p class="score-display">Score: 0</p>
+              <p class="lines-display">Lines Cleared: 0</p>
+            </div>
+          </div>
+        </div>
         <div class="center col-6">
           <header>
             <img src="/images/logo.png" />
@@ -201,39 +212,30 @@
             <p>This project is open source. <a href="https://github.com/Lappage/" target="_blank">Improve this page.</a></p>
           </footer>
         </div>
-        <div class="col">
-          <main>
-            <div class="controlPanel">
-              <div class="buttons">
-                <button id="start">Start</button>
-                <button id="reset">Reset</button>
-              </div>
-              <div class="stats">
-                <p class="score-display">Score: 0</p>
-                <p class="lines-display">Lines Cleared: 0</p>
-              </div>
-              <div class="next-shape">
-                <div class="next-grid">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
+        <div class="right col">
+          <div class="controlPanel">
+            <p class="lead">Next Shape:</p>
+            <div class="next-shape">
+              <div class="next-grid">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
               </div>
             </div>
-          </main>
+          </div>
         </div>
       </div>
     </div>

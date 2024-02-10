@@ -234,21 +234,22 @@ const smallShapes = [
   [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1], //I Shape
 ];
 
+// These ensure the next shape is always centered
+const leftStyles = {
+  0: "5px",
+  1: "30px",
+  2: "15px",
+  3: "27px",
+  4: "15px",
+};
+
 function displayShape() {
   displaySquares.forEach((square) => {
     square.classList.remove("block");
     square.style.backgroundImage = "none";
   });
-  console.log(nextRandom, random);
-  if (nextRandom === 0) {
-    nextShape.style.left = "5px";
-  } else if (nextRandom === 1) {
-    nextShape.style.left = "30px";
-  } else if (nextRandom === 2 || nextRandom === 4) {
-    nextShape.style.left = "15px";
-  } else if (nextRandom === 3) {
-    nextShape.style.left = "27px";
-  }
+
+  nextShape.style.left = leftStyles[nextRandom];
 
   smallShapes[nextRandom].forEach((index) => {
     displaySquares[displayIndex + index].classList.add("block");

@@ -93,27 +93,34 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: auto;
   color: black;
-  width: auto;
   border-radius: 25px;
+  height: auto;
+}
+
+.controlPanel .title {
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 0px;
 }
 .stats {
-  margin: 0 35px 0 25px;
+  margin: 0px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: auto;
   height: 100%;
-  padding-top: 10px;
+  padding: 10px;
 }
 button {
   margin: 5px 10px;
   border: 1px solid black;
   background: transparent;
-  border-radius: 35px;
-  padding: 0 10px;
+  border-radius: 25px;
+  padding: 0px 30px;
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: 300;
 }
 
 button:hover {
@@ -140,6 +147,7 @@ button:hover {
 }
 
 .next-shape {
-  height: 300px;
+  height: auto;
   width: auto;
+  padding-bottom: 10px;
 }

@@ -221,6 +221,10 @@ button:hover {
   .game {
     margin-bottom: 20px;
   }
+
+  footer p {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1000px) {

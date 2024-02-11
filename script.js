@@ -57,20 +57,28 @@ function control(e) {
 }
 
 keypadUp.addEventListener("click", () => {
-  rotate();
+  if (timerId) {
+    rotate();
+  }
 });
 keypadDown.addEventListener("click", () => {
   if (gameEnded) {
     return;
   } else {
-    moveDown();
+    if (timerId) {
+      moveDown();
+    }
   }
 });
 keypadLeft.addEventListener("click", () => {
-  moveLeft();
+  if (timerId) {
+    moveLeft();
+  }
 });
 keypadRight.addEventListener("click", () => {
-  moveRight();
+  if (timerId) {
+    moveRight();
+  }
 });
 
 document.addEventListener("keydown", control);

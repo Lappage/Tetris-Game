@@ -7,6 +7,14 @@ const grid = document.querySelector(".grid");
 const displaySquares = document.querySelectorAll(".next-grid div");
 const nextShape = document.querySelector(".next-grid");
 let squares = Array.from(grid.querySelectorAll("div"));
+const gameOverSmall = document.getElementById("gameOverSmall");
+const ScoreSmall = document.getElementById("scoreSmall");
+const startSmall = document.getElementById("startSmall");
+const resetSmall = document.getElementById("resetSmall");
+const keypadUp = document.getElementById("keypadUp");
+const keypadLeft = document.getElementById("keypadLeft");
+const keypadURight = document.getElementById("keypadRight");
+const keypadDown = document.getElementById("keypadDown");
 const width = 10;
 const height = 26;
 const gridSize = width * height;
@@ -47,6 +55,23 @@ function control(e) {
     }
   }
 }
+
+keypadUp.addEventListener("click", () => {
+  rotate();
+});
+keypadDown.addEventListener("click", () => {
+  if (gameEnded) {
+    return;
+  } else {
+    moveDown();
+  }
+});
+keypadLeft.addEventListener("click", () => {
+  moveLeft();
+});
+keypadRight.addEventListener("click", () => {
+  moveRight();
+});
 
 document.addEventListener("keydown", control);
 
@@ -290,6 +315,7 @@ function gameOver() {
   ) {
     gameEnded = true;
     clearInterval(timerId);
+    gameOverSmall.style.display = "flex";
   }
 }
 
@@ -312,6 +338,7 @@ function addScore() {
       score += 10;
       lines += 1;
       scoreDisplay.innerHTML = `Score: ${score}`;
+      ScoreSmall.innerHTML = `Score: ${score}`;
       linesDisplay.innerHTML = `Lines Cleared: ${lines}`;
 
       row.forEach((index) => {
@@ -337,7 +364,7 @@ function addScore() {
 
 // Start the game
 
-startBtn.addEventListener("click", () => {
+function startGame() {
   if (gameEnded) {
     return;
   }
@@ -351,8 +378,16 @@ startBtn.addEventListener("click", () => {
     nextRandom = Math.floor(Math.random() * shapes.length);
     displayShape();
   }
-});
+}
+
+startBtn.addEventListener("click", startGame);
+
+startSmall.addEventListener("click", startGame);
 
 resetBtn.addEventListener("click", () => {
+  location.reload();
+});
+
+resetSmall.addEventListener("click", () => {
   location.reload();
 });

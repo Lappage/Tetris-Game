@@ -39,26 +39,42 @@ const colors = [
 function control(e) {
   if (e.keyCode === 39) {
     // right arrow
-    moveRight();
+    if (timerId) {
+      moveRight();
+    }
   } else if (e.keyCode === 38) {
     // up arrow
-    rotate();
+    if (gameEnded) {
+      return;
+    } else {
+      if (timerId) {
+        rotate();
+      }
+    }
   } else if (e.keyCode === 37) {
     // left arrow
-    moveLeft();
+    if (timerId) {
+      moveLeft();
+    }
   } else if (e.keyCode === 40) {
     // down arrow
     if (gameEnded) {
       return;
     } else {
-      moveDown();
+      if (timerId) {
+        moveDown();
+      }
     }
   }
 }
 
 keypadUp.addEventListener("click", () => {
-  if (timerId) {
-    rotate();
+  if (gameEnded) {
+    return;
+  } else {
+    if (timerId) {
+      rotate();
+    }
   }
 });
 keypadDown.addEventListener("click", () => {

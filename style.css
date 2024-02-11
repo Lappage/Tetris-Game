@@ -121,9 +121,14 @@ button {
   font-weight: 300;
 }
 
-button:hover {
+.controlPanel button:hover {
   background-color: white;
 }
+
+button:active {
+  color: white;
+}
+
 .buttons {
   margin: 0 15px;
   display: flex;
@@ -162,8 +167,8 @@ button:hover {
   padding: 0px;
   justify-content: center;
   align-items: center;
-  display: none;
   border-radius: 10px;
+  overflow: hidden !important;
 }
 .smallStats {
   display: flex;
@@ -195,6 +200,9 @@ button:hover {
   header img {
     max-width: 250px;
   }
+  header {
+    margin-top: 5px;
+  }
   main {
     margin: 10px;
     padding: 0px;
@@ -220,6 +228,7 @@ button:hover {
   }
   .game {
     margin-bottom: 20px;
+    background-color: black;
   }
 
   footer p {
